@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strategic Intelligence Analyst | Interactive Portfolio</title>
-    <meta name="description" content="Strategic Intelligence Analyst specializing in corporate risk assessment, OSINT, threat intelligence, and geopolitical analysis. Interactive portfolio showcasing advanced capabilities.">
+    <title>Cynthia Ugwu | Strategic Intelligence Analyst</title>
+    <meta name="description" content="Strategic Intelligence Analyst specializing in corporate risk assessment, OSINT, threat intelligence, and geopolitical analysis. Cambridge-educated professional with 4+ years experience.">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -17,6 +17,7 @@
             --primary-bg: #0a0e1a;
             --secondary-bg: #1a1f35;
             --accent-bg: #252b4a;
+            --card-bg: #1e2340;
             --text-primary: #ffffff;
             --text-secondary: #a0a9c0;
             --text-muted: #6b7280;
@@ -25,10 +26,15 @@
             --accent-purple: #8b5cf6;
             --accent-green: #10b981;
             --accent-orange: #f59e0b;
+            --accent-pink: #ec4899;
+            --accent-red: #ef4444;
             --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
             --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+            --gradient-tertiary: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+            --gradient-success: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
             --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.3);
             --shadow-xl: 0 25px 50px rgba(0, 0, 0, 0.5);
+            --border-radius: 16px;
         }
 
         * {
@@ -53,46 +59,56 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            opacity: 0.1;
+            opacity: 0.15;
         }
 
         .floating-orb {
             position: absolute;
             border-radius: 50%;
-            filter: blur(40px);
-            animation: float 6s ease-in-out infinite;
+            filter: blur(60px);
+            animation: float 8s ease-in-out infinite;
         }
 
         .orb-1 {
-            width: 300px;
-            height: 300px;
+            width: 400px;
+            height: 400px;
             background: var(--accent-blue);
-            top: 20%;
-            left: 10%;
+            top: 10%;
+            left: 5%;
             animation-delay: 0s;
         }
 
         .orb-2 {
-            width: 200px;
-            height: 200px;
+            width: 300px;
+            height: 300px;
             background: var(--accent-purple);
-            top: 60%;
-            right: 20%;
-            animation-delay: 2s;
+            top: 50%;
+            right: 10%;
+            animation-delay: 3s;
         }
 
         .orb-3 {
-            width: 150px;
-            height: 150px;
+            width: 250px;
+            height: 250px;
             background: var(--accent-cyan);
-            bottom: 20%;
-            left: 60%;
-            animation-delay: 4s;
+            bottom: 10%;
+            left: 50%;
+            animation-delay: 6s;
+        }
+
+        .orb-4 {
+            width: 200px;
+            height: 200px;
+            background: var(--accent-pink);
+            top: 70%;
+            left: 20%;
+            animation-delay: 2s;
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
+            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+            33% { transform: translateY(-30px) rotate(120deg) scale(1.1); }
+            66% { transform: translateY(20px) rotate(240deg) scale(0.9); }
         }
 
         /* Navigation */
@@ -100,7 +116,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 14, 26, 0.9);
+            background: rgba(10, 14, 26, 0.85);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             z-index: 1000;
@@ -117,18 +133,20 @@
         }
 
         .logo {
-            font-weight: 800;
-            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.8rem;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            cursor: pointer;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .nav-links a {
@@ -137,22 +155,25 @@
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
+            font-size: 0.95rem;
         }
 
         .nav-links a:hover,
         .nav-links a.active {
             color: var(--text-primary);
+            transform: translateY(-2px);
         }
 
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: -8px;
             left: 0;
             width: 0;
             height: 2px;
             background: var(--gradient-primary);
             transition: width 0.3s ease;
+            border-radius: 2px;
         }
 
         .nav-links a:hover::after,
@@ -172,6 +193,7 @@
             background: var(--text-primary);
             margin: 3px 0;
             transition: 0.3s;
+            border-radius: 2px;
         }
 
         /* Hero Section */
@@ -182,61 +204,104 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
+            padding: 0 2rem;
         }
 
         .hero-content {
             text-align: center;
-            max-width: 800px;
-            padding: 0 2rem;
+            max-width: 900px;
             animation: fadeInUp 1s ease-out;
         }
 
-        .hero-subtitle {
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
             color: var(--accent-cyan);
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-badge i {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
 
         .hero-title {
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 800;
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 900;
             margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-title .gradient-text {
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            line-height: 1.1;
         }
 
-        .hero-description {
-            font-size: 1.3rem;
+        .hero-title .accent-text {
+            color: var(--accent-cyan);
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
             color: var(--text-secondary);
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             line-height: 1.6;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .cta-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
+            margin-bottom: 3rem;
         }
 
         .btn {
-            padding: 1rem 2rem;
+            padding: 1.2rem 2.5rem;
             border: none;
             border-radius: 12px;
             font-weight: 600;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.8rem;
             transition: all 0.3s ease;
             cursor: pointer;
             font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
         }
 
         .btn-primary {
@@ -246,20 +311,60 @@
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
             box-shadow: var(--shadow-xl);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
             color: var(--text-primary);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-4px);
+            border-color: var(--accent-cyan);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
         }
 
         /* Scroll Indicator */
@@ -269,17 +374,19 @@
             left: 50%;
             transform: translateX(-50%);
             animation: bounce 2s infinite;
+            cursor: pointer;
         }
 
         .scroll-indicator i {
             font-size: 2rem;
             color: var(--accent-cyan);
+            opacity: 0.7;
         }
 
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-10px); }
-            60% { transform: translateX(-50%) translateY(-5px); }
+            40% { transform: translateX(-50%) translateY(-15px); }
+            60% { transform: translateX(-50%) translateY(-8px); }
         }
 
         /* Sections */
@@ -296,13 +403,25 @@
 
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 5rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            color: var(--accent-purple);
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
         }
 
         .section-title {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 800;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -310,73 +429,60 @@
         }
 
         .section-subtitle {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--text-secondary);
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
+            line-height: 1.6;
         }
 
         /* About Section */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 400px;
-            gap: 4rem;
+            gap: 5rem;
             align-items: center;
         }
 
         .about-content {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             line-height: 1.8;
             color: var(--text-secondary);
         }
 
         .about-content p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .highlight {
             color: var(--accent-cyan);
             font-weight: 600;
+            position: relative;
         }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-top: 2rem;
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gradient-secondary);
+            opacity: 0.3;
         }
 
-        .stat-card {
-            background: var(--secondary-bg);
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--accent-cyan);
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-top: 0.5rem;
-        }
-
-        .profile-card {
-            background: var(--secondary-bg);
-            border-radius: 20px;
-            padding: 2rem;
+        .about-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 3rem;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
+            box-shadow: var(--shadow-lg);
         }
 
-        .profile-card::before {
+        .about-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -391,31 +497,52 @@
             height: 200px;
             border-radius: 50%;
             background: var(--gradient-secondary);
-            margin: 0 auto 1.5rem;
+            margin: 0 auto 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--text-muted);
             font-size: 0.9rem;
             box-shadow: var(--shadow-lg);
+            border: 4px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .profile-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .profile-title {
+            color: var(--accent-cyan);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .profile-education {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
 
         /* Skills Section */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
             gap: 2rem;
         }
 
         .skill-card {
-            background: var(--secondary-bg);
-            border-radius: 16px;
-            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
             cursor: pointer;
+            group: hover;
         }
 
         .skill-card::before {
@@ -432,7 +559,7 @@
         }
 
         .skill-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-12px);
             box-shadow: var(--shadow-xl);
             border-color: rgba(59, 130, 246, 0.3);
         }
@@ -444,73 +571,85 @@
         .skill-header {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .skill-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
+            width: 70px;
+            height: 70px;
+            border-radius: 16px;
             background: var(--gradient-primary);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: white;
+            box-shadow: var(--shadow-lg);
         }
 
         .skill-title {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--text-primary);
+            line-height: 1.3;
         }
 
         .skill-description {
             color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            font-size: 1.05rem;
         }
 
         .skill-tools {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
         }
 
         .tool-tag {
-            background: rgba(59, 130, 246, 0.2);
+            background: rgba(59, 130, 246, 0.15);
             color: var(--accent-blue);
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
             font-weight: 500;
             border: 1px solid rgba(59, 130, 246, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .tool-tag:hover {
+            background: rgba(59, 130, 246, 0.25);
+            transform: translateY(-2px);
         }
 
         .skill-project {
             background: var(--accent-bg);
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: 12px;
             border-left: 4px solid var(--accent-cyan);
+            position: relative;
         }
 
         .project-title {
             font-weight: 600;
             color: var(--text-primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
         }
 
         .project-description {
             color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
 
         .project-metrics {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
         }
 
@@ -520,80 +659,197 @@
         }
 
         .metric-value {
-            font-weight: 700;
+            font-weight: 800;
             color: var(--accent-green);
-            font-size: 1.1rem;
+            font-size: 1.3rem;
+            display: block;
         }
 
         .metric-label {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            margin-top: 0.3rem;
         }
 
-        /* Interactive Terminal */
-        .terminal {
-            background: #1a1a1a;
-            border-radius: 12px;
+        /* Work Showcase */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .work-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
             overflow: hidden;
-            margin: 2rem 0;
-            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            group: hover;
         }
 
-        .terminal-header {
-            background: #2a2a2a;
-            padding: 1rem;
+        .work-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .work-image {
+            height: 200px;
+            background: linear-gradient(135deg, #1e293b, #334155);
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-        }
-
-        .terminal-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-
-        .dot-red { background: #ff5f56; }
-        .dot-yellow { background: #ffbd2e; }
-        .dot-green { background: #27ca3f; }
-
-        .terminal-title {
-            margin-left: 1rem;
-            font-family: 'JetBrains Mono', monospace;
+            justify-content: center;
+            color: var(--text-muted);
             font-size: 0.9rem;
-            color: var(--text-secondary);
+            position: relative;
+            overflow: hidden;
         }
 
-        .terminal-content {
-            padding: 1.5rem;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
-            color: var(--accent-green);
+        .work-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.6s;
         }
 
-        .terminal-line {
-            margin-bottom: 0.5rem;
-            opacity: 0;
-            animation: typewriter 0.05s steps(1, end) forwards;
+        .work-card:hover .work-image::before {
+            left: 100%;
         }
 
-        .terminal-prompt {
-            color: var(--accent-cyan);
+        .work-content {
+            padding: 2rem;
         }
 
-        .terminal-command {
+        .work-category {
+            color: var(--accent-purple);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+        }
+
+        .work-title {
+            font-size: 1.3rem;
+            font-weight: 700;
             color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.3;
         }
 
-        .terminal-output {
+        .work-description {
             color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
         }
 
-        @keyframes typewriter {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .work-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .work-tag {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--accent-purple);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .work-link {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .work-link:hover {
+            color: var(--accent-blue);
+            transform: translateX(5px);
+        }
+
+        /* Blog Section */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .blog-image {
+            height: 180px;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-date {
+            color: var(--accent-cyan);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .blog-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .blog-excerpt {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-link {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .blog-link:hover {
+            color: var(--accent-blue);
+            transform: translateX(5px);
         }
 
         /* Contact Section */
@@ -601,21 +857,35 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
+            align-items: start;
         }
 
         .contact-info {
-            background: var(--secondary-bg);
-            padding: 2rem;
-            border-radius: 16px;
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: var(--border-radius);
             border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .contact-subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            padding: 1rem;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
             background: var(--accent-bg);
             border-radius: 12px;
             transition: all 0.3s ease;
@@ -627,70 +897,114 @@
         }
 
         .contact-icon {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 12px;
             background: var(--gradient-primary);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
         }
 
         .contact-details h4 {
             color: var(--text-primary);
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
         .contact-details p {
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+        }
+
+        .download-cv {
+            background: var(--gradient-success);
+            color: white;
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-top: 2rem;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .download-cv:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
         }
 
         /* Form */
-        .form {
-            background: var(--secondary-bg);
-            padding: 2rem;
-            border-radius: 16px;
+        .contact-form {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: var(--border-radius);
             border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 1rem;
-            background: var(--accent-bg);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            color: var(--text-primary);
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--accent-blue);
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
         }
 
         .form-group textarea {
-            height: 120px;
+            height: 150px;
             resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-bg);
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+        }
+
+        .footer-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         /* Animations */
@@ -705,8 +1019,38 @@
             }
         }
 
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
         .fade-in-up {
             animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.8s ease-out forwards;
         }
 
         /* Responsive Design */
@@ -722,18 +1066,25 @@
             .about-grid,
             .contact-grid {
                 grid-template-columns: 1fr;
+                gap: 3rem;
             }
 
             .hero-title {
-                font-size: 3rem;
+                font-size: 3.5rem;
             }
 
-            .skills-grid {
+            .skills-grid,
+            .work-grid,
+            .blog-grid {
                 grid-template-columns: 1fr;
             }
 
-            .stats-grid {
-                grid-template-columns: 1fr;
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .section-title {
+                font-size: 2.5rem;
             }
         }
 
@@ -742,7 +1093,7 @@
                 padding: 1rem;
             }
 
-            .hero-content {
+            .hero {
                 padding: 0 1rem;
             }
 
@@ -754,48 +1105,62 @@
                 padding: 4rem 0;
             }
 
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
             }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .about-card,
+            .contact-info,
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .skill-card {
+                padding: 2rem;
+            }
         }
 
-        /* Particle System */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .particle {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: var(--accent-cyan);
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid var(--accent-cyan);
             border-radius: 50%;
-            opacity: 0.3;
-            animation: particleFloat 20s linear infinite;
+            animation: spin 1s linear infinite;
         }
 
-        @keyframes particleFloat {
-            0% {
-                transform: translateY(100vh) translateX(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.3;
-            }
-            90% {
-                opacity: 0.3;
-            }
-            100% {
-                transform: translateY(-100vh) translateX(100px);
-                opacity: 0;
-            }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--primary-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-blue);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-cyan);
         }
     </style>
 </head>
@@ -805,19 +1170,19 @@
         <div class="floating-orb orb-1"></div>
         <div class="floating-orb orb-2"></div>
         <div class="floating-orb orb-3"></div>
+        <div class="floating-orb orb-4"></div>
     </div>
-
-    <!-- Particles -->
-    <div class="particles" id="particles"></div>
 
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo">Intel.Analyst</div>
+            <div class="logo" onclick="scrollToTop()">Cynthia Ugwu</div>
             <ul class="nav-links">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Expertise</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="mobile-toggle">
@@ -831,23 +1196,53 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <div class="hero-subtitle">Strategic Intelligence Professional</div>
-            <h1 class="hero-title">Intelligence.<br>Analysis.<br>Innovation.</h1>
-            <p class="hero-description">
-                Transforming complex global risks into actionable intelligence through advanced OSINT, data analysis, and strategic assessment methodologies.
+            <div class="hero-badge">
+                <i class="fas fa-rocket"></i>
+                Strategic Intelligence Professional
+            </div>
+            
+            <h1 class="hero-title">
+                Hi, I'm <span class="gradient-text">Cynthia</span><br>
+                <span class="accent-text">Intelligence</span> Analyst
+            </h1>
+            
+            <p class="hero-subtitle">
+                I transform complex global risks into actionable intelligence through advanced OSINT, data analysis, 
+                and strategic assessment methodologies. Cambridge-educated with 4+ years of proven expertise.
             </p>
+            
             <div class="cta-buttons">
-                <a href="#skills" class="btn btn-primary">
-                    <i class="fas fa-chart-line"></i>
-                    View Expertise
+                <a href="#work" class="btn btn-primary">
+                    <i class="fas fa-eye"></i>
+                    View My Work
                 </a>
                 <a href="#contact" class="btn btn-secondary">
-                    <i class="fas fa-envelope"></i>
-                    Get Consultation
+                    <i class="fas fa-coffee"></i>
+                    Let's Chat
                 </a>
             </div>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">4+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Risk Assessments</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">35%</div>
+                    <div class="stat-label">Risk Reduction</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+            </div>
         </div>
-        <div class="scroll-indicator">
+        
+        <div class="scroll-indicator" onclick="scrollToSection('about')">
             <i class="fas fa-chevron-down"></i>
         </div>
     </section>
@@ -856,69 +1251,44 @@
     <section id="about" class="section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">About</h2>
-                <p class="section-subtitle">Strategic Intelligence Analyst with 4+ years of experience delivering actionable risk assessments</p>
+                <div class="section-badge">Get to know me</div>
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">
+                    Strategic intelligence analyst passionate about transforming complex global challenges into clear, actionable insights
+                </p>
             </div>
             
             <div class="about-grid">
                 <div class="about-content">
-                    <p>I specialize in transforming complex <span class="highlight">geopolitical, security, and regulatory landscapes</span> into clear, actionable intelligence for global organizations operating in high-risk environments.</p>
+                    <p>
+                        I'm a <span class="highlight">strategic intelligence analyst</span> with a passion for uncovering hidden patterns in complex global data. My work sits at the intersection of technology, geopolitics, and corporate security.
+                    </p>
                     
-                    <p>My expertise spans <span class="highlight">corporate due diligence, threat intelligence, OSINT investigations, and compliance frameworks</span>. I combine advanced analytical methodologies with cutting-edge technology to provide comprehensive risk mitigation strategies.</p>
+                    <p>
+                        With my <span class="highlight">Cambridge MPhil in Criminological Research</span> and extensive field experience across MENA, Sahel, and European regions, I bring both academic rigor and practical expertise to every project.
+                    </p>
                     
-                    <p><span class="highlight">Cambridge-educated</span> with extensive field experience across MENA, Sahel, European, and West African regions. I've successfully reduced client risk exposure by up to 35% while improving operational efficiency through automated intelligence collection.</p>
-
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-number">4+</div>
-                            <div class="stat-label">Years Experience</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">100+</div>
-                            <div class="stat-label">Risk Assessments</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">35%</div>
-                            <div class="stat-label">Risk Reduction</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">15+</div>
-                            <div class="stat-label">Countries Analyzed</div>
-                        </div>
-                    </div>
+                    <p>
+                        I specialize in <span class="highlight">OSINT investigations, threat intelligence, and due diligence</span> - helping organizations navigate an increasingly complex risk landscape. My automated intelligence frameworks have reduced client risk exposure by up to 35% while improving operational efficiency.
+                    </p>
+                    
+                    <p>
+                        When I'm not analyzing geopolitical trends or building intelligence dashboards, you'll find me writing about emerging threats, mentoring junior analysts, or exploring new OSINT techniques and tools.
+                    </p>
                 </div>
                 
-                <div class="profile-card">
+                <div class="about-card">
                     <div class="profile-image">
                         Professional Photo
-                        <br><small>Upload your headshot</small>
+                        <br><small>Upload your photo</small>
                     </div>
-                    <h3>Strategic Intelligence Analyst</h3>
-                    <p style="color: var(--text-secondary); margin-top: 0.5rem;">
-                        MPhil Criminological Research, Cambridge<br>
-                        ISO 27001 Lead Auditor
-                    </p>
-
-                    <!-- Terminal -->
-                    <div class="terminal" style="margin-top: 1.5rem;">
-                        <div class="terminal-header">
-                            <div class="terminal-dot dot-red"></div>
-                            <div class="terminal-dot dot-yellow"></div>
-                            <div class="terminal-dot dot-green"></div>
-                            <div class="terminal-title">intelligence_analyst.py</div>
-                        </div>
-                        <div class="terminal-content" id="terminal-content">
-                            <div class="terminal-line">
-                                <span class="terminal-prompt">analyst@cambridge:~$</span> 
-                                <span class="terminal-command">python intelligence_analyst.py</span>
-                            </div>
-                            <div class="terminal-line terminal-output">Initializing intelligence systems...</div>
-                            <div class="terminal-line terminal-output">✓ OSINT collection frameworks loaded</div>
-                            <div class="terminal-line terminal-output">✓ Risk assessment models activated</div>
-                            <div class="terminal-line terminal-output">✓ Threat monitoring systems online</div>
-                            <div class="terminal-line terminal-output">✓ Compliance frameworks verified</div>
-                            <div class="terminal-line terminal-output">Ready for strategic analysis 🎯</div>
-                        </div>
+                    <div class="profile-name">Cynthia Ugwu</div>
+                    <div class="profile-title">Strategic Intelligence Analyst</div>
+                    <div class="profile-education">
+                        MPhil Criminological Research<br>
+                        University of Cambridge<br><br>
+                        ISO 27001 Lead Auditor<br>
+                        OSINT Certified Professional
                     </div>
                 </div>
             </div>
@@ -929,40 +1299,48 @@
     <section id="skills" class="section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Expertise & Case Studies</h2>
-                <p class="section-subtitle">Advanced intelligence capabilities with proven project results</p>
+                <div class="section-badge">What I excel at</div>
+                <h2 class="section-title">Skills & Expertise</h2>
+                <p class="section-subtitle">
+                    Advanced intelligence capabilities with proven project results and real-world impact
+                </p>
             </div>
             
             <div class="skills-grid">
                 <div class="skill-card" data-skill="data-analysis">
                     <div class="skill-header">
                         <div class="skill-icon">
-                            <i class="fas fa-chart-bar"></i>
+                            <i class="fas fa-chart-line"></i>
                         </div>
-                        <div class="skill-title">Data Analysis & Automation</div>
+                        <div class="skill-title">Data Analysis & Intelligence Automation</div>
                     </div>
                     <div class="skill-description">
-                        Advanced statistical analysis, predictive modeling, and automated intelligence collection systems using cutting-edge analytical frameworks.
+                        Advanced statistical analysis, predictive modeling, and automated intelligence collection systems using cutting-edge analytical frameworks and machine learning.
                     </div>
                     <div class="skill-tools">
                         <span class="tool-tag">R Programming</span>
-                        <span class="tool-tag">SQL</span>
+                        <span class="tool-tag">SQL & PostgreSQL</span>
                         <span class="tool-tag">Python</span>
                         <span class="tool-tag">Tableau</span>
+                        <span class="tool-tag">Power BI</span>
                         <span class="tool-tag">Custom Dashboards</span>
                     </div>
                     <div class="skill-project">
-                        <div class="project-title">Supply Chain Intelligence Automation</div>
+                        <div class="project-title">🚀 Supply Chain Intelligence Automation</div>
                         <div class="project-description">
-                            Developed automated OSINT collection methodologies for critical infrastructure supply chain analysis.
+                            Developed automated OSINT collection methodologies for critical infrastructure supply chain analysis, enabling real-time third-party risk mapping.
                         </div>
                         <div class="project-metrics">
                             <div class="metric">
-                                <div class="metric-value">35+</div>
+                                <span class="metric-value">40%</span>
+                                <div class="metric-label">Time Saved</div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">35+</span>
                                 <div class="metric-label">Assessments</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">15+</div>
+                                <span class="metric-value">15+</span>
                                 <div class="metric-label">Dashboards</div>
                             </div>
                         </div>
@@ -977,31 +1355,32 @@
                         <div class="skill-title">Geopolitical Risk Assessment</div>
                     </div>
                     <div class="skill-description">
-                        Comprehensive analysis of political, economic, and security risks across global markets with scenario-based mitigation strategies.
+                        Comprehensive analysis of political, economic, and security risks across global markets with scenario-based mitigation strategies and early warning systems.
                     </div>
                     <div class="skill-tools">
-                        <span class="tool-tag">MENA Region</span>
-                        <span class="tool-tag">Sahel Analysis</span>
+                        <span class="tool-tag">MENA Analysis</span>
+                        <span class="tool-tag">Sahel Region</span>
                         <span class="tool-tag">European Markets</span>
                         <span class="tool-tag">Risk Modeling</span>
                         <span class="tool-tag">Scenario Planning</span>
+                        <span class="tool-tag">Crisis Monitoring</span>
                     </div>
                     <div class="skill-project">
-                        <div class="project-title">MENA Regional Security Analysis</div>
+                        <div class="project-title">🌍 MENA Regional Security Analysis</div>
                         <div class="project-description">
-                            Led comprehensive geopolitical risk assessment for multinational expansion into volatile markets.
+                            Led comprehensive geopolitical risk assessment for multinational expansion into volatile MENA markets, delivering strategic investment recommendations.
                         </div>
                         <div class="project-metrics">
                             <div class="metric">
-                                <div class="metric-value">15+</div>
+                                <span class="metric-value">15+</span>
                                 <div class="metric-label">Countries</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">30+</div>
+                                <span class="metric-value">30+</span>
                                 <div class="metric-label">Risk Updates</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">50+</div>
+                                <span class="metric-value">50+</span>
                                 <div class="metric-label">Intel Feeds</div>
                             </div>
                         </div>
@@ -1013,10 +1392,10 @@
                         <div class="skill-icon">
                             <i class="fas fa-search-dollar"></i>
                         </div>
-                        <div class="skill-title">Enhanced Due Diligence</div>
+                        <div class="skill-title">Enhanced Due Diligence & Compliance</div>
                     </div>
                     <div class="skill-description">
-                        Comprehensive corporate investigations, PEP screening, sanctions compliance, and multi-jurisdictional risk assessment.
+                        Comprehensive corporate investigations, PEP screening, sanctions compliance, and multi-jurisdictional risk assessment with full regulatory adherence.
                     </div>
                     <div class="skill-tools">
                         <span class="tool-tag">AML/KYC</span>
@@ -1024,23 +1403,24 @@
                         <span class="tool-tag">Sanctions</span>
                         <span class="tool-tag">Corporate Intel</span>
                         <span class="tool-tag">Compliance</span>
+                        <span class="tool-tag">Risk Profiling</span>
                     </div>
                     <div class="skill-project">
-                        <div class="project-title">Enhanced Due Diligence Program</div>
+                        <div class="project-title">🔍 Enhanced Due Diligence Program</div>
                         <div class="project-description">
-                            Implemented comprehensive EDD framework for high-risk client onboarding across multiple jurisdictions.
+                            Implemented comprehensive EDD framework for high-risk client onboarding, including advanced screening and reputational risk profiling.
                         </div>
                         <div class="project-metrics">
                             <div class="metric">
-                                <div class="metric-value">100%</div>
+                                <span class="metric-value">100%</span>
                                 <div class="metric-label">Compliance</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">35%</div>
+                                <span class="metric-value">35%</span>
                                 <div class="metric-label">Faster</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">12</div>
+                                <span class="metric-value">12</span>
                                 <div class="metric-label">Risk Entities</div>
                             </div>
                         </div>
@@ -1052,10 +1432,10 @@
                         <div class="skill-icon">
                             <i class="fas fa-binoculars"></i>
                         </div>
-                        <div class="skill-title">Open Source Intelligence</div>
+                        <div class="skill-title">Open Source Intelligence (OSINT)</div>
                     </div>
                     <div class="skill-description">
-                        Advanced OSINT collection, verification, and analysis using sophisticated digital investigation methodologies.
+                        Advanced OSINT collection, verification, and analysis using sophisticated digital investigation methodologies and cutting-edge tools.
                     </div>
                     <div class="skill-tools">
                         <span class="tool-tag">Digital Footprint</span>
@@ -1063,23 +1443,24 @@
                         <span class="tool-tag">Social Intel</span>
                         <span class="tool-tag">Verification</span>
                         <span class="tool-tag">Investigation</span>
+                        <span class="tool-tag">SOCMINT</span>
                     </div>
                     <div class="skill-project">
-                        <div class="project-title">Corporate Intelligence Investigation</div>
+                        <div class="project-title">🕵️ Corporate Intelligence Investigation</div>
                         <div class="project-description">
-                            Deep-dive OSINT investigation uncovering hidden relationship networks and vulnerabilities.
+                            Deep-dive OSINT investigation uncovering hidden relationship networks and identifying key vulnerabilities in corporate structures.
                         </div>
                         <div class="project-metrics">
                             <div class="metric">
-                                <div class="metric-value">8</div>
+                                <span class="metric-value">8</span>
                                 <div class="metric-label">Networks</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">15+</div>
+                                <span class="metric-value">15+</span>
                                 <div class="metric-label">Sources</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">72hrs</div>
+                                <span class="metric-value">72hrs</span>
                                 <div class="metric-label">Timeline</div>
                             </div>
                         </div>
@@ -1091,10 +1472,10 @@
                         <div class="skill-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
-                        <div class="skill-title">Threat Intelligence</div>
+                        <div class="skill-title">Threat Intelligence & Security Analysis</div>
                     </div>
                     <div class="skill-description">
-                        Real-time threat monitoring, incident analysis, and strategic security assessments with proactive mitigation strategies.
+                        Real-time threat monitoring, incident analysis, and strategic security assessments with proactive mitigation strategies and crisis response.
                     </div>
                     <div class="skill-tools">
                         <span class="tool-tag">Cyber Threats</span>
@@ -1102,23 +1483,24 @@
                         <span class="tool-tag">Crisis Response</span>
                         <span class="tool-tag">Monitoring</span>
                         <span class="tool-tag">Analysis</span>
+                        <span class="tool-tag">Early Warning</span>
                     </div>
                     <div class="skill-project">
-                        <div class="project-title">Real-Time Crisis Monitoring</div>
+                        <div class="project-title">⚡ Real-Time Crisis Monitoring</div>
                         <div class="project-description">
-                            Established 24/7 threat monitoring system during national elections with real-time briefings.
+                            Established 24/7 threat monitoring system during national elections, providing real-time security briefings and early warning indicators.
                         </div>
                         <div class="project-metrics">
                             <div class="metric">
-                                <div class="metric-value">24/7</div>
+                                <span class="metric-value">24/7</span>
                                 <div class="metric-label">Monitoring</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">1000+</div>
+                                <span class="metric-value">1000+</span>
                                 <div class="metric-label">Incidents</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">25%</div>
+                                <span class="metric-value">25%</span>
                                 <div class="metric-label">Cost Cut</div>
                             </div>
                         </div>
@@ -1133,7 +1515,7 @@
                         <div class="skill-title">Compliance & Risk Management</div>
                     </div>
                     <div class="skill-description">
-                        Strategic compliance consulting, regulatory framework analysis, and enterprise risk management solutions.
+                        Strategic compliance consulting, regulatory framework analysis, and enterprise risk management with ISO 27001 implementation expertise.
                     </div>
                     <div class="skill-tools">
                         <span class="tool-tag">ISO 27001</span>
@@ -1141,26 +1523,285 @@
                         <span class="tool-tag">Financial Regs</span>
                         <span class="tool-tag">Audit</span>
                         <span class="tool-tag">Risk Mgmt</span>
+                        <span class="tool-tag">ISMS</span>
                     </div>
                     <div class="skill-project">
-                        <div class="project-title">ISO 27001 Compliance Assessment</div>
+                        <div class="project-title">📋 ISO 27001 Compliance Assessment</div>
                         <div class="project-description">
-                            Led comprehensive compliance audit and ISMS implementation ensuring full regulatory adherence.
+                            Led comprehensive compliance audit and ISMS implementation, ensuring full regulatory adherence and security framework establishment.
                         </div>
                         <div class="project-metrics">
                             <div class="metric">
-                                <div class="metric-value">100%</div>
+                                <span class="metric-value">100%</span>
                                 <div class="metric-label">Compliance</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">50+</div>
+                                <span class="metric-value">50+</span>
                                 <div class="metric-label">Controls</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">6mo</div>
+                                <span class="metric-value">6mo</span>
                                 <div class="metric-label">Timeline</div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Showcase Section -->
+    <section id="work" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">My portfolio</div>
+                <h2 class="section-title">Featured Work</h2>
+                <p class="section-subtitle">
+                    A selection of intelligence projects, risk assessments, and analytical frameworks I've developed
+                </p>
+            </div>
+            
+            <div class="work-grid">
+                <div class="work-card" onclick="openWorkDetails('supply-chain')">
+                    <div class="work-image">
+                        Project Screenshot/Visualization
+                    </div>
+                    <div class="work-content">
+                        <div class="work-category">Data Analysis</div>
+                        <div class="work-title">Supply Chain Intelligence Platform</div>
+                        <div class="work-description">
+                            Automated OSINT collection and analysis platform for critical infrastructure supply chain risk assessment, featuring real-time monitoring dashboards and predictive risk modeling.
+                        </div>
+                        <div class="work-tags">
+                            <span class="work-tag">R Programming</span>
+                            <span class="work-tag">Tableau</span>
+                            <span class="work-tag">Risk Assessment</span>
+                            <span class="work-tag">OSINT</span>
+                        </div>
+                        <a href="#" class="work-link">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="work-card" onclick="openWorkDetails('geopolitical-dashboard')">
+                    <div class="work-image">
+                        Dashboard Screenshot
+                    </div>
+                    <div class="work-content">
+                        <div class="work-category">Geopolitical Analysis</div>
+                        <div class="work-title">MENA Risk Monitoring Dashboard</div>
+                        <div class="work-description">
+                            Real-time geopolitical risk monitoring system for MENA region, providing early warning indicators and scenario-based risk assessments for multinational operations.
+                        </div>
+                        <div class="work-tags">
+                            <span class="work-tag">Risk Modeling</span>
+                            <span class="work-tag">Early Warning</span>
+                            <span class="work-tag">Geopolitics</span>
+                            <span class="work-tag">Analytics</span>
+                        </div>
+                        <a href="#" class="work-link">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="work-card" onclick="openWorkDetails('osint-framework')">
+                    <div class="work-image">
+                        OSINT Framework Diagram
+                    </div>
+                    <div class="work-content">
+                        <div class="work-category">OSINT Investigation</div>
+                        <div class="work-title">Corporate Intelligence Investigation</div>
+                        <div class="work-description">
+                            Comprehensive OSINT investigation framework for corporate due diligence, uncovering hidden relationships and identifying key vulnerabilities through advanced digital forensics.
+                        </div>
+                        <div class="work-tags">
+                            <span class="work-tag">OSINT</span>
+                            <span class="work-tag">Digital Forensics</span>
+                            <span class="work-tag">Investigation</span>
+                            <span class="work-tag">Due Diligence</span>
+                        </div>
+                        <a href="#" class="work-link">
+                            View Case Study <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="work-card" onclick="openWorkDetails('threat-monitoring')">
+                    <div class="work-image">
+                        Threat Monitoring Interface
+                    </div>
+                    <div class="work-content">
+                        <div class="work-category">Threat Intelligence</div>
+                        <div class="work-title">Real-Time Threat Monitoring System</div>
+                        <div class="work-description">
+                            24/7 threat intelligence platform deployed during national elections, providing real-time security briefings and automated incident response capabilities.
+                        </div>
+                        <div class="work-tags">
+                            <span class="work-tag">Threat Intel</span>
+                            <span class="work-tag">Real-time</span>
+                            <span class="work-tag">Crisis Response</span>
+                            <span class="work-tag">Monitoring</span>
+                        </div>
+                        <a href="#" class="work-link">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="work-card" onclick="openWorkDetails('compliance-audit')">
+                    <div class="work-image">
+                        Compliance Framework
+                    </div>
+                    <div class="work-content">
+                        <div class="work-category">Compliance</div>
+                        <div class="work-title">ISO 27001 Implementation Project</div>
+                        <div class="work-description">
+                            Complete information security management system implementation, including risk assessment framework, security controls, and compliance monitoring systems.
+                        </div>
+                        <div class="work-tags">
+                            <span class="work-tag">ISO 27001</span>
+                            <span class="work-tag">ISMS</span>
+                            <span class="work-tag">Compliance</span>
+                            <span class="work-tag">Security</span>
+                        </div>
+                        <a href="#" class="work-link">
+                            View Framework <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="work-card" onclick="openWorkDetails('research-thesis')">
+                    <div class="work-image">
+                        Research Publication
+                    </div>
+                    <div class="work-content">
+                        <div class="work-category">Academic Research</div>
+                        <div class="work-title">Cambridge MPhil Research: Counter-Terrorism Analysis</div>
+                        <div class="work-description">
+                            Comparative analysis of state responses to terrorism, examining Balochistan Liberation Army (Pakistan) and Boko Haram (Nigeria) through advanced criminological frameworks.
+                        </div>
+                        <div class="work-tags">
+                            <span class="work-tag">Research</span>
+                            <span class="work-tag">Counter-Terrorism</span>
+                            <span class="work-tag">Criminology</span>
+                            <span class="work-tag">Cambridge</span>
+                        </div>
+                        <a href="#" class="work-link">
+                            Read Research <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Latest insights</div>
+                <h2 class="section-title">Blog & Insights</h2>
+                <p class="section-subtitle">
+                    Thoughts on intelligence analysis, emerging threats, and the future of strategic risk assessment
+                </p>
+            </div>
+            
+            <div class="blog-grid">
+                <div class="blog-card" onclick="openBlogPost('supply-chain-risks')">
+                    <div class="blog-image">
+                        📊 Featured Article
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">January 2025</div>
+                        <div class="blog-title">The Hidden Risks in Modern Supply Chain Due Diligence</div>
+                        <div class="blog-excerpt">
+                            Exploring the complex web of third-party relationships that can expose organizations to unexpected regulatory, reputational, and operational risks in today's interconnected global economy. A deep dive into advanced assessment methodologies...
+                        </div>
+                        <a href="#" class="blog-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="blog-card" onclick="openBlogPost('osint-techniques')">
+                    <div class="blog-image">
+                        🔍 Technical Guide
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">December 2024</div>
+                        <div class="blog-title">OSINT Techniques for Corporate Risk Assessment</div>
+                        <div class="blog-excerpt">
+                            A comprehensive guide to leveraging open source intelligence methodologies for enhanced corporate due diligence and threat identification. From automated collection to verification frameworks...
+                        </div>
+                        <a href="#" class="blog-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="blog-card" onclick="openBlogPost('geopolitical-indicators')">
+                    <div class="blog-image">
+                        🌍 Strategic Analysis
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">November 2024</div>
+                        <div class="blog-title">Geopolitical Indicators Every Business Should Monitor</div>
+                        <div class="blog-excerpt">
+                            Key political, economic, and security indicators that can signal emerging risks to international business operations and investment strategies. Early warning systems in practice...
+                        </div>
+                        <a href="#" class="blog-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="blog-card" onclick="openBlogPost('threat-intelligence-evolution')">
+                    <div class="blog-image">
+                        🛡️ Industry Insight
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">October 2024</div>
+                        <div class="blog-title">The Evolution of Threat Intelligence in Corporate Security</div>
+                        <div class="blog-excerpt">
+                            How modern threat intelligence capabilities are transforming corporate security strategies and enabling proactive risk mitigation approaches. Real-world case studies and lessons learned...
+                        </div>
+                        <a href="#" class="blog-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="blog-card" onclick="openBlogPost('iso-implementation')">
+                    <div class="blog-image">
+                        📋 Practical Guide
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">September 2024</div>
+                        <div class="blog-title">ISO 27001 Implementation: Lessons from the Field</div>
+                        <div class="blog-excerpt">
+                            Practical insights and common challenges encountered during ISO 27001 implementation projects, with actionable recommendations for success. A practitioner's perspective on ISMS development...
+                        </div>
+                        <a href="#" class="blog-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="blog-card" onclick="openBlogPost('sanctions-compliance')">
+                    <div class="blog-image">
+                        ⚖️ Regulatory Focus
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">August 2024</div>
+                        <div class="blog-title">Sanctions Compliance in a Multipolar World</div>
+                        <div class="blog-excerpt">
+                            Navigating the increasingly complex global sanctions landscape and ensuring comprehensive compliance across multiple jurisdictions. Strategic approaches to regulatory complexity...
+                        </div>
+                        <a href="#" class="blog-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1171,13 +1812,19 @@
     <section id="contact" class="section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Let's Connect</h2>
-                <p class="section-subtitle">Ready to discuss your intelligence and risk assessment needs</p>
+                <div class="section-badge">Let's work together</div>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">
+                    Ready to discuss your intelligence and risk assessment needs? Let's explore how we can work together
+                </p>
             </div>
             
             <div class="contact-grid">
                 <div class="contact-info">
-                    <h3 style="margin-bottom: 2rem; color: var(--text-primary);">Get in Touch</h3>
+                    <div class="contact-title">Let's Connect</div>
+                    <div class="contact-subtitle">
+                        Available for strategic intelligence consulting, risk assessment projects, and threat analysis engagements.
+                    </div>
                     
                     <div class="contact-item">
                         <div class="contact-icon">
@@ -1185,7 +1832,7 @@
                         </div>
                         <div class="contact-details">
                             <h4>Email</h4>
-                            <p>your.email@example.com</p>
+                            <p>cynthia@yourdomain.com</p>
                         </div>
                     </div>
                     
@@ -1195,7 +1842,7 @@
                         </div>
                         <div class="contact-details">
                             <h4>LinkedIn</h4>
-                            <p>linkedin.com/in/yourprofile</p>
+                            <p>linkedin.com/in/cynthiaugwu</p>
                         </div>
                     </div>
                     
@@ -1219,50 +1866,55 @@
                         </div>
                     </div>
 
-                    <a href="#" class="btn btn-primary" onclick="downloadCV()" style="margin-top: 2rem; width: 100%; justify-content: center;">
+                    <a href="#" class="download-cv" onclick="downloadCV()">
                         <i class="fas fa-download"></i>
                         Download Full CV
                     </a>
                 </div>
 
-                <div class="form">
-                    <h3 style="margin-bottom: 2rem; color: var(--text-primary);">Consultation Request</h3>
-                    <form onsubmit="submitForm(event)">
+                <div class="contact-form">
+                    <div class="form-title">Start a Conversation</div>
+                    <div class="form-subtitle">
+                        Tell me about your project and let's discuss how I can help you achieve your intelligence and risk assessment goals.
+                    </div>
+                    
+                    <form onsubmit="submitForm(event)" id="contactForm">
                         <div class="form-group">
-                            <label for="name">Full Name</label>
+                            <label for="name">Full Name *</label>
                             <input type="text" id="name" name="name" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="email">Email Address</label>
+                            <label for="email">Email Address *</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="company">Organization</label>
-                            <input type="text" id="company" name="company">
+                            <input type="text" id="company" name="company" placeholder="Your company or organization">
                         </div>
                         
                         <div class="form-group">
-                            <label for="service">Service Required</label>
+                            <label for="service">Service Required *</label>
                             <select id="service" name="service" required>
                                 <option value="">Select a service</option>
-                                <option value="data-analysis">Data Analysis & Automation</option>
+                                <option value="data-analysis">Data Analysis & Intelligence Automation</option>
                                 <option value="geopolitical">Geopolitical Risk Assessment</option>
-                                <option value="due-diligence">Enhanced Due Diligence</option>
+                                <option value="due-diligence">Enhanced Due Diligence & Compliance</option>
                                 <option value="osint">OSINT Investigation</option>
-                                <option value="threat-intel">Threat Intelligence</option>
-                                <option value="compliance">Compliance Consulting</option>
-                                <option value="other">Other</option>
+                                <option value="threat-intel">Threat Intelligence & Security Analysis</option>
+                                <option value="compliance">Compliance & Risk Management</option>
+                                <option value="training">Training & Workshops</option>
+                                <option value="other">Other / Multiple Services</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Project Details</label>
-                            <textarea id="message" name="message" placeholder="Please describe your requirements, timeline, and any specific challenges..." required></textarea>
+                            <label for="message">Project Details *</label>
+                            <textarea id="message" name="message" placeholder="Please describe your requirements, timeline, budget range, and any specific challenges you're facing..." required></textarea>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        <button type="submit" class="submit-btn" id="submitBtn">
                             <i class="fas fa-paper-plane"></i>
                             Send Message
                         </button>
@@ -1272,35 +1924,36 @@
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-title">Cynthia Ugwu</div>
+                <p>Strategic Intelligence Analyst specializing in corporate risk assessment, due diligence, and threat intelligence services.</p>
+                <p style="margin-top: 1rem; opacity: 0.7;">
+                    © 2025 Cynthia Ugwu. Cambridge-educated professional providing actionable intelligence solutions for global organizations.
+                </p>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        // Particle System
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 50;
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            initNavigation();
+            initAnimations();
+            initInteractions();
+            fadeInPage();
+        });
 
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDuration = (Math.random() * 20 + 10) + 's';
-                particle.style.animationDelay = Math.random() * 20 + 's';
-                particlesContainer.appendChild(particle);
-            }
-        }
-
-        // Terminal Animation
-        function animateTerminal() {
-            const lines = document.querySelectorAll('.terminal-line');
-            lines.forEach((line, index) => {
-                line.style.animationDelay = (index * 0.5) + 's';
-            });
-        }
-
-        // Smooth Scrolling Navigation
+        // Navigation Functions
         function initNavigation() {
             const navLinks = document.querySelectorAll('.nav-links a');
             const sections = document.querySelectorAll('.section, .hero');
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            const navLinksContainer = document.querySelector('.nav-links');
 
+            // Smooth scrolling
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -1330,10 +1983,26 @@
                     }
                 });
             });
+
+            // Mobile menu toggle
+            mobileToggle.addEventListener('click', function() {
+                navLinksContainer.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+
+            // Navbar background on scroll
+            window.addEventListener('scroll', function() {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 100) {
+                    navbar.style.background = 'rgba(10, 14, 26, 0.95)';
+                } else {
+                    navbar.style.background = 'rgba(10, 14, 26, 0.85)';
+                }
+            });
         }
 
-        // Intersection Observer for Animations
-        function initScrollAnimations() {
+        // Animation Functions
+        function initAnimations() {
             const observerOptions = {
                 threshold: 0.1,
                 rootMargin: '0px 0px -100px 0px'
@@ -1342,27 +2011,30 @@
             const observer = new IntersectionObserver(function(entries) {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in-up');
+                        if (entry.target.classList.contains('skill-card')) {
+                            entry.target.classList.add('fade-in-up');
+                        } else if (entry.target.classList.contains('work-card')) {
+                            entry.target.classList.add('slide-in-left');
+                        } else if (entry.target.classList.contains('blog-card')) {
+                            entry.target.classList.add('slide-in-right');
+                        } else {
+                            entry.target.classList.add('fade-in-up');
+                        }
                     }
                 });
             }, observerOptions);
 
-            // Observe skill cards
-            document.querySelectorAll('.skill-card').forEach(card => {
-                observer.observe(card);
+            // Observe elements for animation
+            document.querySelectorAll('.skill-card, .work-card, .blog-card, .about-card, .contact-info, .contact-form').forEach(el => {
+                observer.observe(el);
             });
         }
 
-        // Skill Card Interactions
-        function initSkillCards() {
+        // Interactive Functions
+        function initInteractions() {
+            // Skill card interactions
             const skillCards = document.querySelectorAll('.skill-card');
-            
             skillCards.forEach(card => {
-                card.addEventListener('click', function() {
-                    const skillType = this.dataset.skill;
-                    showSkillDetails(skillType);
-                });
-
                 card.addEventListener('mouseenter', function() {
                     this.style.transform = 'translateY(-15px) scale(1.02)';
                 });
@@ -1371,103 +2043,191 @@
                     this.style.transform = 'translateY(0) scale(1)';
                 });
             });
+
+            // Work card interactions
+            const workCards = document.querySelectorAll('.work-card');
+            workCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-12px) scale(1.02)';
+                });
+
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
         }
 
-        function showSkillDetails(skillType) {
-            // This would typically open a modal or navigate to a detailed page
-            const skillNames = {
-                'data-analysis': 'Data Analysis & Automation',
-                'geopolitical': 'Geopolitical Risk Assessment',
-                'due-diligence': 'Enhanced Due Diligence',
-                'osint': 'Open Source Intelligence',
-                'threat-intel': 'Threat Intelligence',
-                'compliance': 'Compliance & Risk Management'
+        // Utility Functions
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function fadeInPage() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease-in-out';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        }
+
+        // Work and Blog Functions
+        function openWorkDetails(projectId) {
+            const projectTitles = {
+                'supply-chain': 'Supply Chain Intelligence Platform',
+                'geopolitical-dashboard': 'MENA Risk Monitoring Dashboard',
+                'osint-framework': 'Corporate Intelligence Investigation',
+                'threat-monitoring': 'Real-Time Threat Monitoring System',
+                'compliance-audit': 'ISO 27001 Implementation Project',
+                'research-thesis': 'Cambridge MPhil Research: Counter-Terrorism Analysis'
             };
 
-            alert(`Viewing detailed samples for ${skillNames[skillType]}. This would open a modal or dedicated page with work samples.`);
+            alert(`Opening detailed view for: ${projectTitles[projectId]}. This would navigate to a dedicated project page with full case study, methodology, results, and technical details.`);
         }
 
-        // Form Submission
+        function openBlogPost(postId) {
+            const postTitles = {
+                'supply-chain-risks': 'The Hidden Risks in Modern Supply Chain Due Diligence',
+                'osint-techniques': 'OSINT Techniques for Corporate Risk Assessment',
+                'geopolitical-indicators': 'Geopolitical Indicators Every Business Should Monitor',
+                'threat-intelligence-evolution': 'The Evolution of Threat Intelligence in Corporate Security',
+                'iso-implementation': 'ISO 27001 Implementation: Lessons from the Field',
+                'sanctions-compliance': 'Sanctions Compliance in a Multipolar World'
+            };
+
+            alert(`Opening blog post: ${postTitles[postId]}. This would navigate to the full article with detailed analysis, case studies, and actionable insights.`);
+        }
+
+        // Form Functions
         function submitForm(event) {
             event.preventDefault();
             
-            const formData = new FormData(event.target);
-            const data = Object.fromEntries(formData);
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.innerHTML;
             
             // Show loading state
-            const submitBtn = event.target.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.innerHTML = '<div class="loading"></div> Sending...';
             submitBtn.disabled = true;
 
-            // Simulate API call
+            // Get form data
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+
+            // Simulate API call (replace with actual form submission)
             setTimeout(() => {
-                alert('Thank you for your consultation request. I will respond within 24-48 hours.');
+                alert('Thank you for your message! I will respond within 24-48 hours to discuss your project requirements.');
                 event.target.reset();
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
             }, 2000);
         }
 
-        // CV Download
         function downloadCV() {
             // Replace with actual CV file path
             const cvUrl = 'cv.pdf';
             const link = document.createElement('a');
             link.href = cvUrl;
-            link.download = 'Strategic_Intelligence_Analyst_CV.pdf';
+            link.download = 'Cynthia_Ugwu_Strategic_Intelligence_Analyst_CV.pdf';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
         }
 
-        // Mobile Menu Toggle
-        function initMobileMenu() {
-            const toggle = document.querySelector('.mobile-toggle');
-            const navLinks = document.querySelector('.nav-links');
-
-            toggle.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-                this.classList.toggle('active');
-            });
-        }
-
-        // Navbar Background on Scroll
-        function initNavbarScroll() {
-            const navbar = document.getElementById('navbar');
-            
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 100) {
-                    navbar.style.background = 'rgba(10, 14, 26, 0.95)';
-                } else {
-                    navbar.style.background = 'rgba(10, 14, 26, 0.9)';
-                }
-            });
-        }
-
-        // Initialize everything when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            createParticles();
-            animateTerminal();
-            initNavigation();
-            initScrollAnimations();
-            initSkillCards();
-            initMobileMenu();
-            initNavbarScroll();
+        // Add some interactive Easter eggs
+        document.addEventListener('keydown', function(event) {
+            // Konami code or special key combinations for fun interactions
+            if (event.ctrlKey && event.shiftKey && event.key === 'I') {
+                console.log('🕵️ Intelligence mode activated! Welcome to the matrix...');
+                document.body.style.filter = 'hue-rotate(180deg)';
+                setTimeout(() => {
+                    document.body.style.filter = 'none';
+                }, 3000);
+            }
         });
 
-        // Smooth page load animation
-        window.addEventListener('load', function() {
-            document.body.style.opacity = '1';
+        // Add smooth mouse parallax effect to floating orbs
+        document.addEventListener('mousemove', function(e) {
+            const orbs = document.querySelectorAll('.floating-orb');
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+
+            orbs.forEach((orb, index) => {
+                const speed = (index + 1) * 0.02;
+                const x = (mouseX - 0.5) * speed * 100;
+                const y = (mouseY - 0.5) * speed * 100;
+                orb.style.transform = `translate(${x}px, ${y}px)`;
+            });
         });
 
-        // Add CSS for page load
-        document.body.style.opacity = '0';
-        document.body.style.transition = 'opacity 0.5s ease-in-out';
+        // Performance optimization: Debounce scroll events
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Apply debouncing to scroll events
+        window.addEventListener('scroll', debounce(function() {
+            // Scroll-based animations can be added here
+        }, 10));
     </script>
 </body>
-</html>value">40%</div>
-                                <div class="metric-label">Time Saved</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-
+</html>title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .form-subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--accent-bg);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        }
+
+        .form-
