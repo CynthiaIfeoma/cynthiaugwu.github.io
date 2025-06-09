@@ -292,8 +292,8 @@
         }
 
         function fadeInPage() {
-            document.body.classList.add('loaded');
-            console.log('Page fade-in applied'); // Debug log
+            // Remove the opacity animation that was causing the blank screen
+            console.log('Page loaded successfully'); // Debug log
         }
 
         // Work and Blog Functions
@@ -562,7 +562,7 @@
 
         // Initialize all enhancements
         window.addEventListener('load', function() {
-            document.body.classList.add('loaded');
+            console.log('Window fully loaded');
         });
     </script>
 </body>
@@ -617,12 +617,6 @@
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
-            opacity: 0;
-            transition: opacity 0.8s ease-in-out;
-        }
-
-        body.loaded {
-            opacity: 1;
         }
 
         /* Animated Background */
